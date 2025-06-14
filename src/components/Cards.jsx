@@ -18,7 +18,7 @@ const Cards = () => {
   ];
 
   return (
-    <div className="flex flex-wrap gap-8 justify-center">
+    <div className="cards-container">
       {imageNames.map((name) => (
         <div className="flip-card" key={name}>
           <div className="flip-card-inner">
@@ -26,7 +26,7 @@ const Cards = () => {
               <img 
                 src={`/${name}.jpeg`}
                 alt={name}
-                className="rounded-[1rem] w-[200px] h-[200px] object-cover"
+                className="card-image"
               />
             </div>
             <div className="flip-card-back">
