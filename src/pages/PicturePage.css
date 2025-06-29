@@ -1,0 +1,29 @@
+.hover-name {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 1000;
+  color: black;
+  font-weight: bold;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: width 0.3s ease, color 0.3s ease;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 1ch; 
+}
+
+.hover-name:hover {
+  width: 6ch; 
+  color: black; 
+}
+
+.hover-name span {
+  display: inline-block;
+  transition: opacity 0.3s ease;
+  opacity: 0;
+}
+
+.hover-name:hover span {
+  opacity: 1;
+}

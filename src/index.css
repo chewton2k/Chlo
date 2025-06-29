@@ -13,6 +13,47 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Eliminate horizontal scroll */
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Apply box-sizing globally */
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+/* Body layout and background */
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  background: linear-gradient(to right, pink, beige);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+/* Responsive wrapper for main content */
+.home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 600px;
+  width: 100%;
+}
+
+h1, h2, h3 {
+  font-size: clamp(1.5rem, 5vw, 2.5rem);
+  line-height: 1.2;
+  margin: 1rem 0;
+}
+
 a {
   font-weight: 500;
   color: #646cff;
@@ -22,20 +63,22 @@ a:hover {
   color: #535bf2;
 }
 
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-  background: linear-gradient(to right, pink, beige);
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+/* Hover grow effect */
+.hover-grow-po {
+  transition: transform 0.3s ease;
+}
+.hover-grow-po:hover {
+  transform: scale(1.1);
 }
 
+
+/* Loading screen */
 .loading-screen {
   position: fixed;
   top: 0;
@@ -50,20 +93,18 @@ h1 {
   opacity: 1;
   transition: opacity 1s ease-in-out;
 }
-
 .fade-out {
   opacity: 0;
 }
-
 .main-content {
   opacity: 0;
   transition: opacity 1s ease-in-out;
 }
-
 .fade-in {
   opacity: 1;
 }
 
+/* Button styling */
 button {
   border-radius: 8px;
   border: 1px solid transparent;
@@ -83,6 +124,7 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
+/* Light mode overrides */
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
@@ -96,4 +138,9 @@ button:focus-visible {
   }
 }
 
-
+/* Mobile tweaks */
+@media (max-width: 400px) {
+  .hover-grow-po {
+    width: 150px !important;
+  }
+}
